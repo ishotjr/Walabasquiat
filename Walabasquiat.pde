@@ -82,13 +82,13 @@ void loadJSONData() {
     
     JSONObject eventObject = targetsJSONArray.getJSONObject(i);
      
-    x = abs(eventObject.getFloat("xPosCm"));
-    y = abs(eventObject.getFloat("yPosCm"));
-    z = abs(eventObject.getFloat("zPosCm"));
+    x = eventObject.getFloat("xPosCm");
+    y = eventObject.getFloat("yPosCm");
+    z = eventObject.getFloat("zPosCm");
     
-    // adjust values to screen size
-    x = x / 100 * width;
-    y = y / 100 * height;
+    // translate from Walabot Cartesian coordinates to pixels, and adjust for screen size
+    x = (width / 2) + ((x / 100.0) * width);
+    y = (height / 2) + ((y / 100.0) * height);
     z = z * 10;
     
     
