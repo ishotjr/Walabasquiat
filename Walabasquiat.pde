@@ -10,7 +10,8 @@ HTimer        timer;
 int time;
 
 void setup() {
-  size(1920,1080);
+  //size(1920,1080);
+  fullScreen();
   H.init(this).background(#242424).autoClear(false);
 
   time = 0;
